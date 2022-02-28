@@ -79,9 +79,9 @@ export default function Mailer() {
               message: "Email sent successfully",
             });
             setSentToEmails(0);
-            // setMessage("");
-            // setEmail("");
-            // setSubject("");
+            setMessage("");
+            setEmail("");
+            setSubject("");
           }, 5000);
         }
       });
