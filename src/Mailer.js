@@ -10,6 +10,7 @@ import {
   LoadingOverlay,
   Space,
   Text,
+  Textarea,
   Title,
 } from "@mantine/core";
 import RichTextEditor from "@mantine/rte";
@@ -17,10 +18,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 export default function Mailer() {
-  const initialValue =
-    "<p>Your initial <b>html value</b> or an empty string to init editor without value</p>";
-
-  const [message, setMessage] = useState(initialValue);
+  const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
@@ -163,15 +161,9 @@ export default function Mailer() {
             label="Message"
             description="Enter your message here. you can add color and links"
           >
-            <RichTextEditor
+            <Textarea
               value={message}
-              onChange={setMessage}
-              controls={[
-                ["bold", "italic", "underline", "link"],
-                ["unorderedList", "h1", "h2", "h3"],
-                ["sup", "sub"],
-                ["alignLeft", "alignCenter", "alignRight"],
-              ]}
+              onChange={(e) => setMessage(e.currentTarget.value)}
             />
           </InputWrapper>
         </Box>
