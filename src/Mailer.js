@@ -13,7 +13,6 @@ import {
   Textarea,
   Title,
 } from "@mantine/core";
-import RichTextEditor from "@mantine/rte";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
