@@ -26,7 +26,7 @@ export default function Mailer() {
   const [sentToEmails, setSentToEmails] = useState(0);
 
   const handleSubmit = async () => {
-    const size = 10;
+    const size = 1;
     const emails = email.split(",").map((email) => email.trim());
 
     setSentToEmails(emails.length);
